@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from "./Header";
-import Content from "./Content";
-import Button from "./Button";
+import Header from "./Component/Header";
+import Content from "./Component/Content";
 
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
         <div>
             <div className="wrapper">
                 <Header />
-                <Button text='кнопка'/>
                 <Content/>
             </div>
         </div>
