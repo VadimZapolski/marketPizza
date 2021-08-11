@@ -3,9 +3,9 @@ import classNames from "classnames";
 import * as PropTypes from "prop-types";
 
 
-function PizzaBlock ({name , price , imageUrl , types , sizes}) {
-    const aviableTypes = ['тонкое'  , 'традиционное']
-    const aviableSizes = [26 , 30 , 40]
+function PizzaBlock({name, price, imageUrl, types, sizes}) {
+    const aviableTypes = ['тонкое', 'традиционное']
+    const aviableSizes = [26, 30, 40]
 
 
     const [activeType, setActiveType] = useState(types[0])
@@ -19,7 +19,7 @@ function PizzaBlock ({name , price , imageUrl , types , sizes}) {
         setActiveSizes(index)
     }
 
-    return(
+    return (
         <div>
             <div className="pizza-block">
                 <img
@@ -30,7 +30,7 @@ function PizzaBlock ({name , price , imageUrl , types , sizes}) {
                 <h4 className="pizza-block__title">{name}</h4>
                 <div className="pizza-block__selector">
                     <ul>
-                        {aviableTypes.map((type , index) => (
+                        {aviableTypes.map((type, index) => (
                             <li key={type}
                                 onClick={() => onSelectedType(index)}
                                 className={classNames({
@@ -40,7 +40,7 @@ function PizzaBlock ({name , price , imageUrl , types , sizes}) {
                         ))}
                     </ul>
                     <ul>
-                        {aviableSizes.map((size , index) => (
+                        {aviableSizes.map((size, index) => (
                             <li key={size}
                                 onClick={() => onSelectedSizes(index)}
                                 className={classNames({
@@ -75,11 +75,11 @@ function PizzaBlock ({name , price , imageUrl , types , sizes}) {
 }
 
 PizzaBlock.propTypes = {
-    name : PropTypes.string.isRequired,
-    imageURL : PropTypes.string.isRequired,
-    price : PropTypes.number.isRequired,
-    types : PropTypes.arrayOf(PropTypes.number).isRequired,
-    sizes : PropTypes.arrayOf(PropTypes.number).isRequired,
+    name: PropTypes.string.isRequired,
+    imageURL: PropTypes.string,
+    price: PropTypes.number.isRequired,
+    types: PropTypes.arrayOf(PropTypes.number).isRequired,
+    sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
 }
 
 export default PizzaBlock
